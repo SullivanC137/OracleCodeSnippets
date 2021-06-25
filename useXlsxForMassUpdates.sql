@@ -1,19 +1,19 @@
-drop table imp_xlsx;
+drop table imp_file;
 
-create table imp_xlsx
+create table imp_file
 (
-id         number        not null,
-name       varchar2(200) not null, --> filename
-upl_date   date          default sysdate not null ,
-xlsx       blob,
-dml_script clob --> store dml script used
+id           number        not null,
+name         varchar2(200) not null, --> filename
+upl_date     date          default sysdate not null ,
+file_content blob,
+dml_script   clob --> store dml script used
 );  
 
-comment on table imp_xlsx is q'#
+comment on table imp_file is q'#
 --example code
 --upload test.xlsx then run:
 select c.*
-from   imp_xlsx ix,
+from   imp_file ix,
        table(apex_data_parser.parse
                (p_content      => ix.xlsx,
                 p_file_name       => 'test.xlsx'
