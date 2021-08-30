@@ -15,8 +15,8 @@ comment on table imp_file is q'#
 select c.*
 from   imp_file ix,
        table(apex_data_parser.parse
-               (p_content      => ix.xlsx,
-                p_file_name       => 'test.xlsx'
+               (p_content      => ix.name,
+                p_file_name    => 'test.xlsx'
                )
              ) c
 where  ix.name = 'test.xlsx'
