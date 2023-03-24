@@ -1,8 +1,9 @@
+-- this script creates an intermediate file called spool_all_files.sql and then runs it
+-- the spool_all_files.sql script will generate a seperate file for each synonym
 set termout off
 set serveroutput on
 set echo off
 set feedback off
-variable v_rowCount number;
 spool spool_all_files.sql
 declare
      i number := 0;
