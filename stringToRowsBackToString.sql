@@ -1,6 +1,6 @@
 -- string to rows APEX installed
 select column_value
-from   table(apex_string.split(:USR_RLE,':')
+from   table(apex_string.split(:USR_RLE,':'))
 ;
 
 -- pure SQL, no APEX. String to rows
