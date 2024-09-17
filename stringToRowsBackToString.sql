@@ -21,7 +21,7 @@ order by name
 
 -- shorter way, again string to rows
 with
-    q_str as (select 'YOUR:COMMA:SEPARATED:STRING' str from dual)
+    q_str as (select 'YOUR:SEMICOLON:SEPARATED:STRING' str from dual)
 select
     regexp_substr(str, '[^:]+', 1, level) cee_id 
 from q_str
